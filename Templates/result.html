@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <table border="1">
+        <tr>
+            <th>Product Title</th>
+            <th>Popularity</th>
+        </tr>
+        {% for title, popularity in results %}
+        <tr>
+            <td>{{ title }}</td>
+            <td>{{ popularity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('home') }}">Upload Another File</a>
+</body>
+</html>
