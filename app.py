@@ -1,12 +1,15 @@
-from flask import Flask, request, render_template, redirect, url_for
-import joblib
+from flask import Flask, request, jsonify,render_template, redirect, url_for
 import pandas as pd
-import os
+import json
+import numpy as np
+import pickle
+
+
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 app = Flask(__name__)
 
-# Load the trained model
-model = joblib.load('model/model.pkl')
 
 # Define upload folder
 UPLOAD_FOLDER = 'uploads/'
